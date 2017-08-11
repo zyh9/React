@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			this.state
+			this.setState()
+			this.props
+  
+  			从父组件传递给子组件数据的方式是通过this.props来进行接收的。
+  
+  
+  			单向数据类：
+  			
+      			父组件的数据流向子组件是单向的，父级的数据只能父级修改，子级不允许修改
+      
+      		react中的表单：
+      		
+    			受限与非受限
+    
+    			受限：
+      				只要是表单元素加了默认值为受限组件，默认值是根据状态来修改的，
+      				只要状态不改那么里面的值就不会变。
+      			select
+      			checkbox
+      			radio
+      			textarea
+      
+      			只要是更改表单元素可以通用onChange
+      
+      			受限组件如何解决？
+        		1.绑onChange事件
+        
+        		2.defaultValue/defaultChecked
+          			在表单元素身上加了defaultValue/defaultChecked之后，
+          			表单元素就不再是受限组件了
+          	ref:方便我们在当前组件下快速获取某个组件或者元素。
+  
+  			读：
+    		console.log(this.head)
+    
+  			写:
+    			<header ref = {(elem)=>{this.head = elem}}></header>
+    
+  			注意：
+     			如果没在当前组件上设置ref（跨组件），那么获取的值为undefined。
+          	
+          	*/
+		</script>
+	</body>
+</html>
