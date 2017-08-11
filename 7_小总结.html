@@ -25,6 +25,7 @@
     			受限：
       				只要是表单元素加了默认值为受限组件，默认值是根据状态来修改的，
       				只要状态不改那么里面的值就不会变。
+      				
       			select
       			checkbox
       			radio
@@ -33,15 +34,17 @@
       			只要是更改表单元素可以通用onChange
       
       			受限组件如何解决？
-        		1.绑onChange事件
-        
-        		2.defaultValue/defaultChecked
-          			在表单元素身上加了defaultValue/defaultChecked之后，
-          			表单元素就不再是受限组件了
+      			
+	        		1.绑onChange事件
+	        
+	        		2.defaultValue/defaultChecked
+	          			在表单元素身上加了defaultValue/defaultChecked之后，
+	          			表单元素就不再是受限组件了
+	          			
           	ref:方便我们在当前组件下快速获取某个组件或者元素。
   
   			读：
-    		console.log(this.head)
+    			console.log(this.head)
     
   			写:
     			<header ref = {(elem)=>{this.head = elem}}></header>
