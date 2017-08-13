@@ -45,14 +45,14 @@
 	          			
           	ref:方便我们在当前组件下快速获取某个组件或者元素。
   
-  			读：
-    			console.log(this.head)
-    
-  			写:
-    			<header ref = {(elem)=>{this.head = elem}}></header>
-    
-  			注意：
-     			如果没在当前组件上设置ref（跨组件），那么获取的值为undefined。
+	  			读：
+	    			console.log(this.head)
+	    
+	  			写:
+	    			<header ref = {(elem)=>{this.head = elem}}></header>
+	    
+	  			注意：
+	     			如果没在当前组件上设置ref（跨组件），那么获取的值为undefined。
           	
           	父子级组件通信
           	
