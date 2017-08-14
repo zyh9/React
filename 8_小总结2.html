@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			书写格式
+	  			1.type类型       <script type="text/babel"></script>
+		        2.首字母必须大写
+		        3.调用组件的时候必须使用<HelloWorld />格式来写
+		        
+		    JSX语法
+		    	1.首字母必须大写
+		      	2.驼峰命名
+		      	3.使用className与htmlFor代替class和for
+		      	4.组件与组件之间是可以嵌套的
+		      	5.在JSX语法中只能使用求值表达式，不能使用语句（for，switch等）
+		      		如果要使用for等语句 在函数中使用
+		      	6.只有一个顶层标签
+          	
+          	JSX的注释
+				在JSX语法中，添加注释需要写在 { } 中
+				可以使用多行注释与单行注释
+			
+			条件判断的四种写法
+        		1.三元表达式 ? :
+				2.使用变量，通过函数使用条件判断语句，返回一个字符串
+				3.直接在{}中调用函数
+				4.使用比较运算符 || && !
+			
+			JSX中使用样式
+    			1.行内样式：写行内样式的时候需要使用两个{}  ==>{{}}
+    			2.对象样式：在return前面定义一个样式对象，注意样式的写法，与HTML的不同点
+    			3.CSS样式（最常用）
+
+    			注意事项，在HTML5中与在React中的样式的书写区别：
+    			1.HTML5中以;结束
+    				在React中以,结束
+    			2.在HTML5中属性与值都不需要加上引号
+         			在React中，属于javascript对象，
+         			key中不能存在 - ，需要使用驼峰命名，如果是value值，需要加上引号
+    			3.在HTML中，设置带数字的值，宽度，高度==，需要带上单位
+         			在React中可以不用带单位，直接写数字 这里是指那些规定了默认单位的值。
+         			比如说像素px，如果要使用em或者是rem则需要加上单位
+  				其他注意事项：
+     				{} 插值符号 (例如写行内style样式的时候为啥要用{{}})
+     				在使用插值符号的时候，里面需要时一个对象或者是一个表达式
+     				
+     		非DOM（元素）属性
+				1.dangerouslySetInnerHTML：在JSX中直接插入HTML代码，动态的添加HTML内容，
+					由用户添加，需要使用属性，__html 
+					（一般用的比较少，这样用户可以直接添加html了  不安全，容易被不法分子添加病毒）
+				2.ref：父组件引用子组件
+					this.refs.name
+				3.key：目的：提高渲染性能 ，涉及到React diff算法，React通过key值判断是否重新渲染
+				
+			react属性
+				一.属性的含义与用法
+				含义：props = properties
+				属性：一个事物的性质与关系，属性往往是与生俱来，无法自己改变的
+				
+				二.属性的两种用法
+				1.<Demo   title=?  />：？中的内容可以是：字符串，对象{}，数组{[1,2,3]}，变量{var}
+				2.<Demo  {…props} />
+				var  props = {
+				one:”123”,
+				two:”456”
+				}
+			
+			react状态
+				一.状态的含义与用法
+					state
+					状态：事物所处的状况
+					状态是由事物自行处理，不断变化的。父组件与子组件都无法改变他的状态
+				
+				二.状态的用法
+					getInitialState：初始化状态
+					setState：更新状态
+					
+			react生命周期
+				一.什么是生命周期
+					组件本质是状态机，输入确定，输出一定确定
+					一个state对应一个render，状态转换的时候会触发不同的函数，
+					从而让开发者有机会做出响应，可以用事件的思路理解状态，
+					但是事件与事件之间没有关联，而状态与状态之间可能会有关联
+				二.初始化阶段
+					设置初始的属性与状态
+					getDefaultProps：设置初始的属性，只在第一次调用，实例之间共享引用
+					getInitialState：设置初始的状态
+					componentWillMount：组件将要加载，render之前最后一次修改状态的机会
+					render：只能访问this.props与this.state，只有一个顶层标签（组件），不允许修改状态和DOM输出
+					componentDidMount：成功render并渲染完成真实DOM之后出发，可以修改DOM，要操作DOM也必须在这个阶段完成
+				三.运行中阶段
+					componentWillReceiveProps：父组件修改属性触发，可以修改新属性，修改状态
+					shouldCompoenntUpdate：组件是否更新，返回false会阻止render调用，render后面的函数都不会执行
+					componentWillUpdate：不能修改属性与状态，用于日志打印与数据获取
+					reder：只能访问this.props与this.state，只有一个顶层标签（组件），不允许修改状态和DOM输出
+					componentDidUpdate：可以修改DOM
+				四.销毁阶段
+					componentWillUnmount：组件将要卸载
+					在ReactDOM中提供一个方法unmountComponentAtNode(删除节点的名字)
+					
+			
+			*/
+		</script>
+	</body>
+</html>
