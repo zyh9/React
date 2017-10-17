@@ -152,7 +152,8 @@
 		
 		shouldComponentUpdate(nextProps, nextState) // 是否停止更新
 			组件挂载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。
-			默认返回true，接下来调用render函数。反之，如果得到一个false，那就立刻停止更新过程，也就不会引发后续的渲染了。
+			默认返回true，接下来调用render函数。反之，如果得到一个false，
+			那就立刻停止更新过程，也就不会引发后续的渲染了。
 			在比较复杂的应用里，有一些数据的改变并不影响界面展示，可以在这里做判断，优化渲染效率。
 			
 			说render函数重要，是因为render函数决定了该渲染什么，
@@ -163,7 +164,8 @@
 		
 		componentDidUpdate() // 更新之后
 			除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。
-			componentDidUpdate函数，并不是只在浏览器端才执行的，无论更新过程发生在服务器端还是浏览器端，该函数都会被调用。
+			componentDidUpdate函数，并不是只在浏览器端才执行的，
+			无论更新过程发生在服务器端还是浏览器端，该函数都会被调用。
 		
 		componentWillUnmount() // 卸载之前
 			当React组件要从DOM树上删除掉之前，对应的componentWillUnmount函数会被调用，
