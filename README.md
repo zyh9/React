@@ -128,29 +128,35 @@
 ### react生命周期
 
 		constructor(props, context)
+		
 			要创造一个组件类的实例，当然会调用对应的构造函数。
 		
 		componentWillMount() // 装载之前
+		
 			在组件挂载之前调用一次。如果在这个函数里面调用setState，
 			本次的render函数可以看到更新后的state，并且只渲染一次。
 		
 		ReactElement render()
+		
 			render函数应该是一个纯函数，完全根据this.state和this.props来决定返回的结果，
 			而且不要产生任何副作用。在render函数中去调用this.setState毫无疑问是错误的，
 			因为一个纯函数不应该引起状态的改变。
 		
 		componentDidMount() // 装载之后
+		
 			componentWilIMount和componentDidMount这对兄弟函数还有一个区别，
 			就是componentWillMount可以在服务器端被调用，也可以在浏览器端被调用；
 			而componentDidMount只能在浏览器端被调用，在服务器端使用React的时候不会被调用。
 			在componentDidMount被调用的时候，组件已经被装载到DOM树上了，可以放心获取渲染出来的任何DOM。
 		
 		componentWillReceiveProps(nextProps) // 组件参数更新
+		
 			只要是父组件的render函数被调用，在render函数里面被谊染的子组件就会经历更新过程，
 			不管父组件传给子组件的props有没有改变，都会触发子组件的componentWillReceiveProps函数。
 			注意，通过this.setState方法触发的更新过程不会调用这个函数。
 		
 		shouldComponentUpdate(nextProps, nextState) // 是否停止更新
+		
 			组件挂载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。
 			默认返回true，接下来调用render函数。反之，如果得到一个false，
 			那就立刻停止更新过程，也就不会引发后续的渲染了。
@@ -160,14 +166,17 @@
 			而说shouldComponentUpdate函数重要，是因为它决定了一个组件什么时候不需要渲染。
 		
 		componentWillUpdate(nextProps, nextState) // 更新之前
+		
 			shouldComponentUpdate返回true或者调用forceUpdate之后，componentWillUpdate会被调用。
 		
 		componentDidUpdate() // 更新之后
+		
 			除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。
 			componentDidUpdate函数，并不是只在浏览器端才执行的，
 			无论更新过程发生在服务器端还是浏览器端，该函数都会被调用。
 		
 		componentWillUnmount() // 卸载之前
+		
 			当React组件要从DOM树上删除掉之前，对应的componentWillUnmount函数会被调用，
 			所以这个函数适合做一些清理性的工作。
 			
