@@ -224,11 +224,11 @@
 			
 		3.修改webpack配置
 		
-			修改 webpack.config.dev.js 和 webpack.config-prod.js 配置文件
+			修改 webpack.config.dev.js 和 webpack.config.prod.js 配置文件
 		
 			改动1：
 			
-				/\.css$/改为 /\.(css|less)$/，修改后如下：
+				/\.css$/ 改为 /\.(css|less)$/，修改后如下：
 				
 				exclude: [
 				  /\.html$/,
