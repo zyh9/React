@@ -364,7 +364,11 @@
 		
 			const imgs = imgURL.keys().map(imgURL);
 		
-		第三步：循环遍历这个存放所有图片的数组，判断json中的图片名称是否与之匹配，如果匹配成功，则将图片地址赋值给img的src
+		第三步：
+		
+			循环遍历这个存放所有图片的数组，判断json中的图片名称是否与之匹配
+			
+			如果匹配成功，则将图片地址赋值给img的src
 
 ```javascript
 	let img = '';
