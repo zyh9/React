@@ -356,13 +356,14 @@
 		
 			const imgURL = require.context('../image',true,/^\.\/.*\.png$/)
 		
-			这里简单介绍一下 require.context 的参数，第一个参数是图片存放的相对路径地址，第二个参数是是否查找子文件夹，第三个参数是匹配图片的正则表达式
+			require.context的参数，第一个参数是图片存放的相对路径地址
+			第二个参数是是否查找子文件夹，第三个参数是匹配图片的正则表达式
 		
 		第二步：
 		
 			const imgs = imgURL.keys().map(imgURL);
 		
-		第三步：循环遍历这个存放所有图片的数组，判断json中的图片名称是否与之匹配，如果匹配成功，则将图片地址赋值给   的 url
+		第三步：循环遍历这个存放所有图片的数组，判断json中的图片名称是否与之匹配，如果匹配成功，则将图片地址赋值给img的src
 
 ```javascript
 	let img = '';
