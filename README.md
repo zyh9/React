@@ -357,6 +357,7 @@
 			const imgURL = require.context('../image',true,/^\.\/.*\.png$/)
 		
 			require.context的参数，第一个参数是图片存放的相对路径地址
+			
 			第二个参数是是否查找子文件夹，第三个参数是匹配图片的正则表达式
 		
 		第二步：
