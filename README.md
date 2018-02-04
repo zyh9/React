@@ -336,19 +336,13 @@
 
 > 2.通过require的方法
 
-		let img = require('../image/xxx.png');
-		
-		<img src={img} />
-		
-		或者：
-		
 		<img src={require('../image/xxx.png')}>
 		
 		需要注意： 以上两种方式存在弊端：
 		
-		1.require只可以写字符串，不可以写变量
-		
-		2.只适用于图片较少的方式，如果图片是存在一个 json 文件中廷议管理的化，推荐使用（也只有这种方式）以下方法：
+			1.require只可以写字符串，不可以写变量
+			
+			2.只适用于图片较少的方式，如果图片是存在一个json文件中管理的话，推荐使用以下方法：
 
 > 3.使用 require.context 的方法： 
 
