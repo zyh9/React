@@ -229,7 +229,8 @@
 			改动1：
 			
 				/\.css$/ 改为 /\.(css|less)$/，修改后如下：
-				
+
+```javascript
 				exclude: [
 				  /\.html$/,
 				  /\.(js|jsx)$/,
@@ -240,93 +241,99 @@
 				  /\.jpe?g$/,
 				  /\.png$/,
 				],
-			
+```
+
 			改动2：
 			
 				test: /\.css$/ 改为 /\.(css|less)$/
 				test: /\.css$/ 的 use 数组配置增加 less-loader
 				修改后如下：
-				{
-				  test: /\.(css|less)$/,
-				  use: [
-				    require.resolve('style-loader'),
-				    {
-				      loader: require.resolve('css-loader'),
-				      options: {
-				        importLoaders: 1,
-				      },
-				    },
-				    {
-				      loader: require.resolve('postcss-loader'),
-				      options: {
-				        // Necessary for external CSS imports to work
-				        // https://github.com/facebookincubator/create-react-app/issues/2677
-				        ident: 'postcss',
-				        plugins: () => [
-				          require('postcss-flexbugs-fixes'),
-				          autoprefixer({
-				            browsers: [
-				              '>1%',
-				              'last 4 versions',
-				              'Firefox ESR',
-				              'not ie < 9', // React doesn't support IE8 anyway
-				            ],
-				            flexbox: 'no-2009',
-				          }),
-				        ],
-				      },
-				    },
-				    {
-				      loader: require.resolve('less-loader') // compiles Less to CSS
-				    }
-				  ],
-				},
+
+```javascript
+	{
+	  test: /\.(css|less)$/,
+	  use: [
+	    require.resolve('style-loader'),
+	    {
+	      loader: require.resolve('css-loader'),
+	      options: {
+	        importLoaders: 1,
+	      },
+	    },
+	    {
+	      loader: require.resolve('postcss-loader'),
+	      options: {
+	        // Necessary for external CSS imports to work
+	        // https://github.com/facebookincubator/create-react-app/issues/2677
+	        ident: 'postcss',
+	        plugins: () => [
+	          require('postcss-flexbugs-fixes'),
+	          autoprefixer({
+	            browsers: [
+	              '>1%',
+	              'last 4 versions',
+	              'Firefox ESR',
+	              'not ie < 9', // React doesn't support IE8 anyway
+	            ],
+	            flexbox: 'no-2009',
+	          }),
+	        ],
+	      },
+	    },
+	    {
+	      loader: require.resolve('less-loader') // compiles Less to CSS
+	    }
+	  ],
+	},
+```
 
 [segmentfault文章链接，请点我](https://segmentfault.com/a/1190000010162614)
 
 ### react-swipe的使用
 
-		import React,{Component} from 'react';
-		import ReactSwipe from 'react-swipe';
-		class Slider extends Component{
-		    constructor(){
-		        super();
-		        this.state = {
-		            index:0
-		        }
-		    }
-		    render(){
-		        let opt = {
-		            auto:1600,
-		            //每隔多少毫秒运动一次
-		            callback:(index) => {
-		                this.setState({
-		                    index: index
-		                })
-		                //console.log(index)
-		            }
-		        }
-		        return(
-		            <div className="slider">
-		                <ReactSwipe  swipeOptions={opt}>
-		                    <img src="1.jpg" alt="img"/>
-		                    <img src="2.jpg" alt="img"/>
-		                    <img src="3.jpg" alt="img"/>
-		                </ReactSwipe>
-		                <div className="zSwitch">
-		                    <span className={this.state.index === 0 ? 'active':''}></span>
-		                    <span className={this.state.index === 1 ? 'active':''}></span>
-		                    <span className={this.state.index === 2 ? 'active':''}></span>
-		                </div>
-		            </div>
-		        )
-		    }
-		    //测试下是否引入
-		    componentDidMount() {
-		        //console.log(ReactSwipe)
-		    }
-		}
-		export default Slider;
+```javascript
+	import React,{Component} from 'react';
+	import ReactSwipe from 'react-swipe';
+	class Slider extends Component{
+	    constructor(){
+	        super();
+	        this.state = {
+	            index:0
+	        }
+	    }
+	    render(){
+	        let opt = {
+	            auto:1600,
+	            //每隔多少毫秒运动一次
+	            callback:(index) => {
+	                this.setState({
+	                    index: index
+	                })
+	                //console.log(index)
+	            }
+	        }
+	        return(
+	            <div className="slider">
+	                <ReactSwipe  swipeOptions={opt}>
+	                    <img src="1.jpg" alt="img"/>
+	                    <img src="2.jpg" alt="img"/>
+	                    <img src="3.jpg" alt="img"/>
+	                </ReactSwipe>
+	                <div className="zSwitch">
+	                    <span className={this.state.index === 0 ? 'active':''}></span>
+	                    <span className={this.state.index === 1 ? 'active':''}></span>
+	                    <span className={this.state.index === 2 ? 'active':''}></span>
+	                </div>
+	            </div>
+	        )
+	    }
+	    //测试下是否引入
+	    componentDidMount() {
+	        //console.log(ReactSwipe)
+	    }
+	}
+	export default Slider;
+```
 
 ### 关于react引入图片
 
