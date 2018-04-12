@@ -231,16 +231,16 @@
 				/\.css$/ 改为 /\.(css|less)$/，修改后如下：
 
 ```javascript
-				exclude: [
-				  /\.html$/,
-				  /\.(js|jsx)$/,
-				  /\.(css|less)$/,
-				  /\.json$/,
-				  /\.bmp$/,
-				  /\.gif$/,
-				  /\.jpe?g$/,
-				  /\.png$/,
-				],
+	exclude: [
+		/\.html$/,
+		/\.(js|jsx)$/,
+		/\.(css|less)$/,
+		/\.json$/,
+		/\.bmp$/,
+		/\.gif$/,
+		/\.jpe?g$/,
+		/\.png$/,
+	],
 ```
 
 			改动2：
