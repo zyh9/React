@@ -383,3 +383,60 @@
 	
 	<img src={img} />
 ```
+
+### 使用ES6让你的React代码提升到一个新档次
+
+> 嵌套props解构
+
+		您已经知道可以通过解构从React组件中的props中提取变量
+
+		const { user } = this.props;
+		但是如果user是一个对象并且你想从this.props.user.id提取到变量_id_呢？
+
+		您可以使用嵌套解构：
+
+		const { user: { id } } = this.props;
+		现在你有一个变量_id _是 this.props.user.id 的内容
+
+> 传下所有props
+
+		您已经知道可以将props传递给子组件。
+
+		<MyChild shoe={this.props.shoe} cup={this.props.cup}/>
+		将所有props传递给具有扩展语法的子组件。
+
+		<MyChild {...this.props}/>
+		现在，MyChild可以访问shoe，cup以及父组件可以访问的所有其他props！
+
+> props解构
+
+		你已经知道你可以用箭头函数来构造props
+
+		const MyComponent = ({ shoe, car }) => /* do something */
+		但是，如果您还想访问props对象呢？
+
+		这可能是这样的：
+
+		const MyComponent = ({ shoe, car, ...props }) => /* do something */
+		props现在包含除shoe和car以外的所有props。
+
+> 作为参数的函数
+
+		您已经知道可以将箭头函数作为参数传递给其他函数，例如map和forEach
+
+		myList.map((a) => toUpperCase(a))
+		（您必须自己编写toUpperCase以使此代码可运行）
+
+		上面的代码甚至没有使用箭头功能也可以写
+
+		myList.map(toUpperCase)
+		更干净！当您只在箭头函数中使用一个参数并将该参数传递给新函数时，您可以像这样编写它。
+
+> 列表解构
+
+		您已经知道可以对列表进行解构：
+
+		const [a, b, c] = list;
+		获取第一项，其余为两个变量：
+
+		const [first, ...rest] = list;
