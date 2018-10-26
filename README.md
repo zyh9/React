@@ -440,3 +440,31 @@
 		获取第一项，其余为两个变量：
 
 		const [first, ...rest] = list;
+
+### react动态添加样式 style和className
+
+> react向元素内，动态添加style
+
+		例如：有一个DIV元素， 需要动态添加一个 display:block | none 样式， 那么：
+
+		<div style={{display: (index===this.state.currentIndex) ? "block" : "none"}}>此标签是否隐藏</div>
+		
+		或者， 多个样式写法：
+
+		<div style={{display: (index===this.state.currentIndex) ? "block" : "none", color:"red"}}>此标签是否隐藏</div>
+
+> react向元素内，动态添加className
+
+		比如：
+
+		1、DIV标签中，没有其他class，只需要动态添加一个.active的className，来显示内容是否被选中状态，则：
+
+		<div className={index===this.state.currentIndex?"active":null}>此标签是否选中</div>
+
+		2、如果DIV标签本身有其他class，又要动态添加一个.active的className，来显示内容是否被选中状态，则：
+
+		<div className={["container tab", index===this.state.currentIndex?"active":null].join(' ')}>此标签是否选中</div>
+		
+		或者，使用ES6写法（推荐使用ES6写法）：
+
+		<div className={`container tab ${index===this.state.currentIndex?"active":null}`}>此标签是否选中</div>
