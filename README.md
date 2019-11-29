@@ -357,7 +357,7 @@
 
 		第一步：通过 require.context从存放图片的文件夹中引入所有文件
 		
-			const imgURL = require.context('../image',true,/^\.\/.*\.png$/)
+			const imgURL = require.context('../image',true,/\.(png|jpg)$/)
 		
 			require.context的参数，第一个参数是图片存放的相对路径地址
 			
